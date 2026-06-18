@@ -1,0 +1,37 @@
+CREATE TABLE students (
+    name VARCHAR(100),
+    email VARCHAR(100),
+    age INT,
+    city VARCHAR(50),
+    score DECIMAL(5,2),
+    enroll DATE,
+    is_active BOOLEAN,
+    created_at TIMESTAMP
+);
+INSERT INTO students
+(name, email, age, city, score, enroll, is_active)
+VALUES
+('Sowmya', 'sowmya@gmail.com', 21, 'Shimoga', 95.50, '2026-06-18', TRUE),
+('Rahul', 'rahul@gmail.com', 22, 'Bangalore', 88.75, '2026-06-10', TRUE),
+('Priya', 'priya@gmail.com', 20, 'Mysore', 91.25, '2026-05-15', FALSE);
+CREATE TABLE transactions (
+    t_id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(50),
+    amount INT,
+    customer_id INT
+);
+INSERT INTO transactions (name, amount, customer_id)
+VALUES
+('Sowmya', 5000, 101),
+('Rahul', 3000, 102),
+('Priya', 7000, 103);
+CREATE TABLE customer (
+    c_id INT PRIMARY KEY,
+    name VARCHAR(50),
+    amount INT,
+    FOREIGN KEY (c_id) REFERENCES transactions(customer_id)
+);
+SELECT *
+FROM customer c
+INNER JOIN transactions t
+ON c.c_id = t.customer_id;
