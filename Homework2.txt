@@ -1,0 +1,204 @@
+switched to db admin
+db["Products"].find()
+{
+  _id: ObjectId('6a3b59048d42086ca74b33eb'),
+  id: '1',
+  product_name: 'Intelligent Fresh Chips',
+  product_price: 655,
+  product_material: 'Concrete',
+  product_color: 'mint green'
+}
+{
+  _id: ObjectId('6a3b59048d42086ca74b33ec'),
+  id: '2',
+  product_name: 'Practical Fresh Sausages',
+  product_price: 911,
+  product_material: 'Cotton',
+  product_color: 'indigo'
+}
+{
+  _id: ObjectId('6a3b59048d42086ca74b33ed'),
+  id: '3',
+  product_name: 'Refined Steel Car',
+  product_price: 690,
+  product_material: 'Rubber',
+  product_color: 'gold'
+}
+{
+  _id: ObjectId('6a3b59048d42086ca74b33ee'),
+  id: '4',
+  product_name: 'Gorgeous Plastic Pants',
+  product_price: 492,
+  product_material: 'Soft',
+  product_color: 'plum'
+}
+{
+  _id: ObjectId('6a3b59048d42086ca74b33ef'),
+  id: '5',
+  product_name: 'Sleek Cotton Chair',
+  product_price: 33,
+  product_material: 'Fresh',
+  product_color: 'black'
+}
+{
+  _id: ObjectId('6a3b59048d42086ca74b33f0'),
+  id: '6',
+  product_name: 'Awesome Wooden Towels',
+  product_price: 474,
+  product_material: 'Plastic',
+  product_color: 'orange'
+}
+{
+  _id: ObjectId('6a3b59048d42086ca74b33f1'),
+  id: '7',
+  product_name: 'Practical Soft Shoes',
+  product_price: 500,
+  product_material: 'Rubber',
+  product_color: 'pink'
+}
+{
+  _id: ObjectId('6a3b59048d42086ca74b33f2'),
+  id: '8',
+  product_name: 'Incredible Steel Hat',
+  product_price: 78,
+  product_material: 'Rubber',
+  product_color: 'violet'
+}
+{
+  _id: ObjectId('6a3b59048d42086ca74b33f3'),
+  id: '9',
+  product_name: 'Awesome Wooden Ball',
+  product_price: 28,
+  product_material: 'Soft',
+  product_color: 'azure'
+}
+{
+  _id: ObjectId('6a3b59048d42086ca74b33f4'),
+  id: '10',
+  product_name: 'Generic Wooden Pizza',
+  product_price: 84,
+  product_material: 'Frozen',
+  product_color: 'indigo'
+}
+{
+  _id: ObjectId('6a3b59048d42086ca74b33f5'),
+  id: '11',
+  product_name: 'Unbranded Wooden Cheese',
+  product_price: 26,
+  product_material: 'Soft',
+  product_color: 'black'
+}
+{
+  _id: ObjectId('6a3b59048d42086ca74b33f6'),
+  id: '12',
+  product_name: 'Unbranded Plastic Salad',
+  product_price: 89,
+  product_material: 'Wooden',
+  product_color: 'pink'
+}
+{
+  _id: ObjectId('6a3b59048d42086ca74b33f7'),
+  id: '13',
+  product_name: 'Gorgeous Cotton Keyboard',
+  product_price: 37,
+  product_material: 'Concrete',
+  product_color: 'sky blue'
+}
+{
+  _id: ObjectId('6a3b59048d42086ca74b33f8'),
+  id: '14',
+  product_name: 'Incredible Steel Shirt',
+  product_price: 54,
+  product_material: 'Metal',
+  product_color: 'white'
+}
+{
+  _id: ObjectId('6a3b59048d42086ca74b33f9'),
+  id: '15',
+  product_name: 'Ergonomic Cotton Hat',
+  product_price: 43,
+  product_material: 'Rubber',
+  product_color: 'mint green'
+}
+{
+  _id: ObjectId('6a3b59048d42086ca74b33fa'),
+  id: '16',
+  product_name: 'Small Soft Chair',
+  product_price: 47,
+  product_material: 'Cotton',
+  product_color: 'teal'
+}
+{
+  _id: ObjectId('6a3b59048d42086ca74b33fb'),
+  id: '17',
+  product_name: 'Incredible Metal Car',
+  product_price: 36,
+  product_material: 'Fresh',
+  product_color: 'indigo'
+}
+{
+  _id: ObjectId('6a3b59048d42086ca74b33fc'),
+  id: '18',
+  product_name: 'Licensed Plastic Bacon',
+  product_price: 88,
+  product_material: 'Steel',
+  product_color: 'yellow'
+}
+{
+  _id: ObjectId('6a3b59048d42086ca74b33fd'),
+  id: '19',
+  product_name: 'Intelligent Cotton Chips',
+  product_price: 46,
+  product_material: 'Soft',
+  product_color: 'azure'
+}
+{
+  _id: ObjectId('6a3b59048d42086ca74b33fe'),
+  id: '20',
+  product_name: 'Handcrafted Wooden Bacon',
+  product_price: 36,
+  product_material: 'Concrete',
+  product_color: 'lime'
+}
+Type "it" for more
+db.products.find({
+    product_price: { $gte: 400, $lte: 800 }
+})
+db.products.find({
+    product_price: { $not: { $gte: 400, $lte: 600 } }
+})
+db.products.find({
+    product_price: { $gt: 500 }
+}).limit(4)
+db.products.find(
+    {},
+    {
+        product_name: 1,
+        product_material: 1,
+        _id: 0
+    }
+)
+db.products.find({
+    id: "10"
+})
+db.products.find(
+    {},
+    {
+        product_name: 1,
+        product_material: 1,
+        _id: 0
+    }
+)
+db.products.find({
+    product_color: "indigo",
+    product_price: 492.00
+})
+db.products.deleteMany({
+    product_price: 28
+})
+{
+  acknowledged: true,
+  deletedCount: 0
+}
+
+
